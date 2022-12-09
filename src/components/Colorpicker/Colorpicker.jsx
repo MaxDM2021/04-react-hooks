@@ -7,6 +7,12 @@ export default function ColorPicker({options}) {
 
 const [activeOptionIdx, setActiveOptionIdx] = useState(0);
 
+
+const setActiveIdx = index => {
+  setActiveOptionIdx(index);
+};
+
+
 const makeOptionClassName = index => {
     return index === activeOptionIdx ? styles.activeOption : styles.option;
 };
@@ -21,10 +27,10 @@ const { lable } = options[activeOptionIdx];
             {options.map(({ lable, color }, index) => (
               <button
                 key={lable}
-               arial-lable={lable}
+              //  arial-lable={lable}
                 className={makeOptionClassName(index)}
                 style={{ backgroundColor: color }}
-                onClick={() => setActiveOptionIdx(index)}
+                onClick={() => setActiveIdx(index)}
               ></button>
             ))}
           </div>

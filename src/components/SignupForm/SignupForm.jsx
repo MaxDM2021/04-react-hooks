@@ -1,6 +1,6 @@
 import styles from './SignumForm.module.css';
 import useLocalStorage from 'components/hooks';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 
@@ -16,6 +16,20 @@ export default function SignupForm() {
   // const handlePasswordChange = event => {
   //     setPassword(event.target.value);
   // }
+
+useEffect(() => {
+  window.localStorage.setItem('email', JSON.stringify(email))
+}, [email])
+
+useEffect(() => {
+  window.localStorage.setItem('password', JSON.stringify(password))
+}, [password])
+
+  
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(email, password)
+  }
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -36,7 +50,7 @@ export default function SignupForm() {
 
 
   return (
-    <form className={styles.form} autoComplete="off">
+    <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
       <label className={styles.label}>
         <span>Почта</span>
         <input

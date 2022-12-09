@@ -3,6 +3,8 @@ import SignumForm from "./SignupForm/SignupForm";
 import Counter from "./Counter";
 import Clock from "./Clock";
 import Countertwo from "./Countertwo";
+import News from "./News";
+import UserMenu from "./UserMenu";
 
 
 
@@ -20,11 +22,14 @@ const colorPickerOptions = [
 export const App = () => {
   return (
     <>
-<SignumForm/>
+{/* <SignumForm/>
 <Colorpicker options={colorPickerOptions} />
 <Counter/>
 <Clock/>
-<Countertwo/>
+<Countertwo/> */}
+<News/>
+<UserMenu/>
+
 </>
   );
 };
